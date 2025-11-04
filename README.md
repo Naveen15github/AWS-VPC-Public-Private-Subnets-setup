@@ -24,10 +24,10 @@ This exercise demonstrates how cloud engineers can design a network architecture
 The process involved defining a CIDR block, attaching an Internet Gateway, and verifying connectivity between components.
 This setup lays the groundwork for creating public and private subnets, EC2 instances, RDS databases, and load balancers in a controlled network environment.
 
-![AWS VPC]()
+![AWS VPC](https://github.com/Naveen15github/AWS-VPC-Public-Private-Subnets-setup/blob/e9202cd676a11373490d5ef94472d437591f7be8/Screenshot%20(94).png)
 
 ## 🌐 Public Subnet Creation
-![AWS VPC]()
+![AWS VPC](https://github.com/Naveen15github/AWS-VPC-Public-Private-Subnets-setup/blob/e9202cd676a11373490d5ef94472d437591f7be8/Screenshot%20(95).png)
 In this step, I created a Public Subnet inside the custom VPC to host resources that require direct internet access, such as web servers or bastion hosts.
 The subnet was configured with a CIDR block within the VPC range and placed in a specific Availability Zone for redundancy.
 
@@ -37,7 +37,7 @@ This route table was then associated with the public subnet to make it internet-
 Finally, I verified the setup by launching an EC2 instance in the public subnet and confirming internet connectivity through a public IP.
 
 ## 🔒 Private Subnet Creation
-![AWS VPC]()
+![AWS VPC](https://github.com/Naveen15github/AWS-VPC-Public-Private-Subnets-setup/blob/e9202cd676a11373490d5ef94472d437591f7be8/Screenshot%20(96).png)
 Next, I created a Private Subnet to securely host backend resources such as databases, application servers, or internal services that should not be exposed directly to the internet.
 This subnet was assigned a unique CIDR block within the same VPC and deployed in a different Availability Zone for high availability.
 
@@ -47,7 +47,7 @@ Unlike the public subnet, instances in the private subnet do not receive public 
 This setup provides a secure and efficient network layer for sensitive workloads and internal communication within the AWS infrastructure.
 
 ## 🌉 Internet Gateway Creation – mygate
-![AWS VPC]()
+![AWS VPC](https://github.com/Naveen15github/AWS-VPC-Public-Private-Subnets-setup/blob/e9202cd676a11373490d5ef94472d437591f7be8/Screenshot%20(97).png)
 
 In this step, I created an Internet Gateway named mygate to enable internet connectivity for resources within my VPC.
 The Internet Gateway acts as a bridge between the VPC and the public internet, allowing instances in the public subnet to send and receive traffic outside AWS.
@@ -58,7 +58,7 @@ Next, I updated the public route table to include a route (0.0.0.0/0) that direc
 This setup ensures that EC2 instances within the public subnet can access the internet securely while maintaining control through AWS networking components.
 
 ## 🛣️ Route Table Creation – myRT
-![AWS VPC]()
+![AWS VPC](https://github.com/Naveen15github/AWS-VPC-Public-Private-Subnets-setup/blob/e9202cd676a11373490d5ef94472d437591f7be8/Screenshot%20(98).png)
 
 In this step, I created a Route Table named myRT to control the flow of network traffic within my custom VPC.
 Route tables in AWS define how traffic is directed between subnets and external networks such as the internet or other VPCs.
@@ -75,7 +75,7 @@ The VPC maintains controlled and secure routing for network traffic.
 In a production setup, a separate private route table is typically used for private subnets, routing traffic through a NAT Gateway instead of the Internet Gateway.
 
 ## 🔧 Editing Subnet Associations
-![AWS VPC]()
+![AWS VPC](https://github.com/Naveen15github/AWS-VPC-Public-Private-Subnets-setup/blob/e9202cd676a11373490d5ef94472d437591f7be8/Screenshot%20(99).png)
 
 After creating the route table myRT, the next step was to edit subnet associations to link it with the appropriate subnet.
 Subnet associations determine which subnet’s traffic is controlled by a specific route table within the VPC.
